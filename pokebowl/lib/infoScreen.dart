@@ -1,49 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:pokebowl/main.dart';
 
-class InfoScreen extends StatefulWidget {
-  InfoScreen({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class Info extends StatelessWidget {
+  // This widget is the root of your application.
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: new InfoScreen()
+    );
+  }
 }
 
-class _MyHomePageState extends State<InfoScreen> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-@override
+class InfoScreen extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomPaint(
+    return new Scaffold(
+        body: CustomPaint(
         painter: BluePainter(),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.display1,
-              ),
-            ],
+          child: Center(
+            child: Text(
+              'Info Pagina',
+            )
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
     );
   }
 }

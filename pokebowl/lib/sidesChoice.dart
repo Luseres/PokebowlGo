@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokebowl/baseChoice.dart';
+import 'package:pokebowl/proteinChoice.dart';
 import 'package:pokebowl/scrollWidget.dart';
 
 class SidesChoice extends StatelessWidget {
@@ -27,15 +28,35 @@ class SidesScreen extends StatelessWidget {
           ScrollWidget(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => BaseChoice()),
-            );
-          }
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Container(
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            FloatingActionButton(
+              heroTag: "btn4",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BaseChoice()),
+                );
+              },
+              child: Icon(Icons.arrow_back),
+            ),
+            FloatingActionButton(
+              heroTag: "btn5",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProteinChoice()),
+                );
+              },
+              child: Icon(Icons.arrow_forward),
+            ),
+          ],
+        ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     ) ;
   }
 }

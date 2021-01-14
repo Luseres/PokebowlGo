@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokebowl/infoScreen.dart';
 import 'package:pokebowl/baseChoice.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BaseChoice()),
+                  MaterialPageRoute(builder: (context) => InfoScreen()),
                 );
               }
           ),

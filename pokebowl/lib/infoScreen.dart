@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokebowl/main.dart';
 
-class BaseChoice extends StatelessWidget {
+class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -28,13 +28,34 @@ class BaseScreen extends StatelessWidget {
             ScrollWidget(),
           ],
         ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SidesChoice()),
-            );
-          }
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Container(
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            FloatingActionButton(
+              heroTag: "btn2",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
+              },
+              child: Icon(Icons.arrow_back),
+            ),
+            FloatingActionButton(
+              heroTag: "btn3",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SidesChoice()),
+                );
+              },
+              child: Icon(Icons.arrow_forward),
+            ),
+          ],
+        ),
       ),
     ) ;
   }

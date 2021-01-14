@@ -21,8 +21,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-          body: Center(child: Text('PokeBowlGo')),
+          body: Center(
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BaseChoice()),
+                  );
+                },
+                child: Text('Make Bowl'),
+              )
+          ),
           floatingActionButton: FloatingActionButton(
+              heroTag: "btn1",
               onPressed: () {
                 Navigator.push(
                   context,

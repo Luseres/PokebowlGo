@@ -1,0 +1,131 @@
+{
+    "ingredients": {
+        "bases": [
+            {
+                "name": "Mixed rice",
+                "image": "https://i.imgur.com/Gy0yol7.jpg",
+                "price": 3.50
+            },
+            {
+                "name": "White rice",
+                "image": "https://i.imgur.com/FkzqRMl.png",
+                "price": 3.50
+            },
+            {
+                "name": "Brown rice",
+                "image": "https://i.imgur.com/KgAbFGd.png",
+                "price": 3.50
+            }
+        ],
+        "sides": [
+            {
+                "name": "Seaweed",
+                "image": "https://i.imgur.com/xUk0LVT.png",
+                "price": 0.75
+            },
+            {
+                "name": "Avocado",
+                "image": "https://i.imgur.com/D5MjUHU.png",
+                "price": 0.75
+            },
+            {
+                "name": "Crab meat",
+                "image": "https://i.imgur.com/1VPvpT5.png",
+                "price": 1.00
+            },
+            {
+                "name": "Edamame",
+                "image": "https://i.imgur.com/gM2ihyQ.png",
+                "price": 0.75
+            }
+        ],
+        "protein": [
+            {
+                "name": "Chicken",
+                "image": "https://i.imgur.com/lL0zzW2.png",
+                "price": 1.00
+            },
+            {
+                "name": "Salmon",
+                "image": "https://i.imgur.com/TMQOjn5.png",
+                "price": 1.25
+            },
+            {
+                "name": "Tuna",
+                "image": "",
+                "price": 1.25
+            },
+            {
+                "name": "Shrimp",
+                "image": "https://i.imgur.com/B8kYe6N.png",
+                "price": 1.25
+            }
+        ],
+        "mixins": [
+            {
+                "name": "Cilantro",
+                "image": "https://i.imgur.com/AfyfQjl.png",
+                "price": 0.75
+            },
+            {
+                "name": "Cucumber",
+                "image": "https://i.imgur.com/lIXHRNB.png",
+                "price": 0.75
+            },
+            {
+                "name": "Jalapeno",
+                "image": "https://i.imgur.com/vyNQtPZ.png",
+                "price": 1.00
+            },
+            {
+                "name": "Onion",
+                "image": "https://i.imgur.com/cxK7i5A.png",
+                "price": 0.75
+            }
+        ],
+        "sauces": [
+            {
+                "name": "Sesame",
+                "image": "https://i.imgur.com/DjzQRUR.png",
+                "price": 0.75
+            },
+            {
+                "name": "Sweet chili",
+                "image": "https://i.imgur.com/D3n2LYk.png",
+                "price": 1.00
+            },
+            {
+                "name": "Spicy mayo",
+                "image": "https://i.imgur.com/Tx3urk2.png",
+                "price": 1.00
+            },
+            {
+                "name": "WWasabi Aioli",
+                "image": "https://i.imgur.com/72anwpy.jpg",
+                "price": 1.25
+            }
+        ],
+        "toppings": [
+            {
+                "name": "Pineapple",
+                "image": "https://i.imgur.com/XuOEGGv.png",
+                "price": 1.00
+            },
+            {
+                "name": "Tamago",
+                "image": "https://i.imgur.com/jGmFA0H.png",
+                "price": 1.00
+            },
+            {
+                "name": "Corn",
+                "image": "https://i.imgur.com/SxFAidB.png",
+                "price": 1.00
+            },
+            {
+                "name": "Sesame seeds",
+                "image": "https://i.imgur.com/oTNHh27.png",
+                "price": 0.75
+            }
+        ]
+    }
+}

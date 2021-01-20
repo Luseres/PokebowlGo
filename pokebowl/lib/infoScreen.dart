@@ -16,16 +16,96 @@ class InfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
         body: CustomPaint(
-        painter: BluePainter(),
-          child: Center(
-            child: Text(
-              'Info Pagina',
-            )
+          painter: BluePainter(),
+          child: Align( alignment: Alignment(0.00, -0.75),
+            child: Column (
+              children: [
+                
+                Text(
+                  'Informatie', 
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black
+                  ), 
+                ),
+                SizedBox(height: 35),
+                Text(
+                  'Informatie', 
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black
+                )),Divider(
+                  height: 0,
+                  thickness: 2,
+                  indent: 135,
+                  endIndent: 165,
+                  color: Colors.orange,
+                ),SizedBox(height: 120),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 10, 120, 0),
+                  child: Text(
+                    'Stap 1 : Kies je formaat van je pokebowl.', 
+                    style: TextStyle(
+                      fontSize: 12,
+                      
+                      color: Colors.black
+                  )),
+                ),Divider(
+                  height: 12,
+                  thickness: 2,
+                  indent: 25,
+                  endIndent: 215,
+                  color: Colors.white,
+                ),Padding(
+                  padding: const EdgeInsets.fromLTRB(25.0, 40, 120, 0),
+                  child: Text(
+                    'Stap 2 : Selecteer 1 voor 1 de ingredienten die je in je pokebowl wilt hebben.', 
+                    style: TextStyle(
+                      fontSize: 12,
+                      
+                      color: Colors.black
+                  )),
+                ),Divider(
+                  height: 12,
+                  thickness: 2,
+                  indent: 25,
+                  endIndent: 230,
+                  color: Colors.white,
+                ),Padding(
+                  padding: const EdgeInsets.fromLTRB(25.0, 40, 120, 0),
+                  child: Text(
+                    'Stap 2 : Selecteer 1 voor 1 de ingredienten die je in je pokebowl wilt hebben.', 
+                    style: TextStyle(
+                      fontSize: 12,
+                      
+                      color: Colors.black
+                  )),
+                ),Divider(
+                  height: 12,
+                  thickness: 2,
+                  indent: 25,
+                  endIndent: 250,
+                  color: Colors.white,
+                ), SizedBox(height: 45),SizedBox(
+                  width: 175,
+                  height: 45,
+                  child: RaisedButton(onPressed: () {
+                    print('test');
+                  },
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
+                    child: Text("Make Bowl   ➜", style: TextStyle(color: Colors.orange, fontSize: 20, fontWeight: FontWeight.bold)  ,)
+                    ,),
+                )
+              ],
+            ),  
           ),
         ),
     );
   }
 }
+
+
 
 class BluePainter extends CustomPainter {
   @override

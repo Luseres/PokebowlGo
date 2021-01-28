@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokebowl/gegevensScreen.dart';
 import 'package:pokebowl/infoScreen.dart';
 import 'package:pokebowl/baseChoice.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -83,7 +84,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => InfoScreen()),
+                  MaterialPageRoute(builder: (context) => GegevensScreen()),
                 );
               },
               backgroundColor: Colors.white,

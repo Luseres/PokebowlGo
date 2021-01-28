@@ -20,15 +20,7 @@ class InfoScreen extends StatelessWidget {
           child: Align( alignment: Alignment(0.00, -0.75),
             child: Column (
               children: [
-                
-                Text(
-                  'Informatie', 
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.black
-                  ), 
-                ),
-                SizedBox(height: 35),
+                SizedBox(height: 85),
                 Text(
                   'Informatie', 
                   style: TextStyle(
@@ -37,12 +29,12 @@ class InfoScreen extends StatelessWidget {
                 )),Divider(
                   height: 0,
                   thickness: 2,
-                  indent: 135,
-                  endIndent: 165,
+                  indent: 148,
+                  endIndent: 150,
                   color: Colors.orange,
                 ),SizedBox(height: 120),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 10, 120, 0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 10, 144, 0),
                   child: Text(
                     'Stap 1 : Kies je formaat van je pokebowl.', 
                     style: TextStyle(
@@ -86,7 +78,9 @@ class InfoScreen extends StatelessWidget {
                   indent: 25,
                   endIndent: 250,
                   color: Colors.white,
-                ), SizedBox(height: 45),SizedBox(
+                ),
+                SizedBox(height: 45),
+                SizedBox(
                   width: 175,
                   height: 45,
                   child: RaisedButton(onPressed: () {
@@ -94,8 +88,8 @@ class InfoScreen extends StatelessWidget {
                   },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
-                    child: Text("Make Bowl   ➜", style: TextStyle(color: Colors.orange, fontSize: 20, fontWeight: FontWeight.bold)  ,)
-                    ,),
+                    child: Text("Make Bowl   ➜", style: TextStyle(color: Colors.orange, fontSize: 20, fontWeight: FontWeight.bold)),
+                  ),
                 )
               ],
             ),  
@@ -104,8 +98,6 @@ class InfoScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 class BluePainter extends CustomPainter {
   @override

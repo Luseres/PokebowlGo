@@ -128,7 +128,7 @@ class CustomRadioBaseState extends State<CustomRadioBase> {
     HomeScreen().getAPIChoices("bases").then((results) => {
           results.forEach((result) {
             sampleData.add(new RadioModel(
-                false, result['name'], result['price'].toString()));
+                false, result['name'], result['price'].toString(), result['imageURL']));
           })
         });
     super.initState();
@@ -172,7 +172,9 @@ class RadioItem extends StatelessWidget {
           new Container(
             height: 218.0,
             width: 225.0,
-            child: new Center(),
+            child: new Center(
+              child: new Image.network(_item.imageURL),
+            ),
             decoration: new BoxDecoration(
               border: new Border.all(
                   width: _item.isSelected ? 3.0 : 1.0,
@@ -200,6 +202,7 @@ class RadioModel {
   bool isSelected;
   final String text;
   final String price;
+  final String imageURL;
 
-  RadioModel(this.isSelected, this.text, this.price);
+  RadioModel(this.isSelected, this.text, this.price, this.imageURL);
 }

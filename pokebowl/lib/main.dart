@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pokebowl/gegevensScreen.dart';
+import 'package:pokebowl/cartScreen.dart';
 import 'package:pokebowl/infoScreen.dart';
 import 'package:pokebowl/baseChoice.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pokebowl/halfCircle.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +23,48 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: Center(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Container(
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            FloatingActionButton(
+              heroTag: "btn0",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
+              },
+              backgroundColor: Colors.white,
+              child: FaIcon(
+                FontAwesomeIcons.history,
+                color: Color(0xFFEB9A00),
+                size: 30,
+              ),
+            ),
+            FloatingActionButton(
+              heroTag: "btn1",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InfoScreen()),
+                );
+              },
+              backgroundColor: Colors.white,
+              child: FaIcon(
+                FontAwesomeIcons.info,
+                color: Color(0xFFEB9A00),
+                size: 30,
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: CustomPaint(
+        painter: HalfCircle(),
+        child: Center(
           child: Column(
             children: [
               SizedBox(height: 84),
@@ -57,44 +99,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
-        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            FloatingActionButton(
-              heroTag: "btn0",
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => GegevensScreen()),
-                );
-              },
-              backgroundColor: Colors.white,
-              child: FaIcon(
-                FontAwesomeIcons.history,
-                color: Color(0xFFEB9A00),
-                size: 30,
-              ),
-            ),
-            FloatingActionButton(
-              heroTag: "btn1",
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => InfoScreen()),
-                );
-              },
-              backgroundColor: Colors.white,
-              child: FaIcon(
-                FontAwesomeIcons.info,
-                color: Color(0xFFEB9A00),
-                size: 30,
-              ),
-            ),
-          ],
-        ),
+
       ),
     );
   }

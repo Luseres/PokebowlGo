@@ -173,8 +173,12 @@ class RadioItem extends StatelessWidget {
           new Container(
             height: 218.0,
             width: 225.0,
-            child: new Center(
-              child: new Image.network(_item.imageURL),
+            child: new FittedBox(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(18.0),
+                child: new Image.network(_item.imageURL),
+              ),
+              fit: BoxFit.fill,
             ),
             decoration: new BoxDecoration(
               border: new Border.all(

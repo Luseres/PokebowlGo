@@ -127,8 +127,8 @@ class CustomRadioBaseState extends State<CustomRadioBase> {
   void initState() {
     HomeScreen().getAPIChoices("bases").then((results) => {
           results.forEach((result) {
-            sampleData.add(new RadioModel(
-                false, result['name'], result['price'].toString(), result['imageURL']));
+            sampleData.add(new RadioModel(false, result['name'],
+                result['price'].toString(), result['image']));
           }),
           setState(() {})
         });

@@ -117,7 +117,8 @@ class HomeScreen extends StatelessWidget {
   }
 
   Future<List<dynamic>> getAPIChoices(String type) async {
-    final response = await http.get("http://10.0.2.2:8000/ingredients.json");
+    final response = await http
+        .get("https://joshuavanderpoll.nl/api/pokebowlgo/ingredients.json");
     if (response.statusCode == 200) {
       Map<dynamic, dynamic> ingredients = jsonDecode(response.body);
       return ingredients['ingredients'][type];

@@ -129,7 +129,8 @@ class CustomRadioBaseState extends State<CustomRadioBase> {
           results.forEach((result) {
             sampleData.add(new RadioModel(
                 false, result['name'], result['price'].toString(), result['imageURL']));
-          })
+          }),
+          setState(() {})
         });
     super.initState();
   }

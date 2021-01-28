@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokebowl/main.dart';
 import 'package:pokebowl/sauceChoice.dart';
 import 'package:pokebowl/cartScreen.dart';
 import 'package:pokebowl/halfCircle.dart';
@@ -7,9 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class ToppingsChoice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: new ToppingsScreen()
-    );
+    return MaterialApp(home: new ToppingsScreen());
   }
 }
 
@@ -59,63 +58,59 @@ class ToppingsScreen extends StatelessWidget {
       ),
       body: CustomPaint(
         painter: HalfCircle(),
-        child: Center (
-          child: Column(
-              children: [
-                SizedBox(height: 24),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset('assets/images/Logo.png'),
-                      Column(
-                          children: [
-                            Text("PokeBowlGo", style: TextStyle(fontSize: 25)),
-                            RichText(
-                              text: TextSpan(
-                                  text: 'Create ', style: TextStyle(fontSize: 25, color: Colors.black),
-                                  children: <TextSpan>[
-                                    TextSpan(text: 'your ', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black)),
-                                    TextSpan(text: 'own', style: TextStyle(fontSize: 25, color: Colors.black)),
-                                  ]
-                              ),
-                            ),
-                          ]
-                      ),
-                    ]
+        child: Center(
+          child: Column(children: [
+            SizedBox(height: 24),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Image.asset('assets/images/Logo.png'),
+              Column(children: [
+                Text("PokeBowlGo", style: TextStyle(fontSize: 25)),
+                RichText(
+                  text: TextSpan(
+                      text: 'Create ',
+                      style: TextStyle(fontSize: 25, color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'your ',
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
+                        TextSpan(
+                            text: 'own',
+                            style:
+                                TextStyle(fontSize: 25, color: Colors.black)),
+                      ]),
                 ),
-                SizedBox(height: 23.5),
-                Divider(
-                  color: Color(0xFF707070),
-                  height: 0,
-                  indent: 0,
-                  endIndent: 0,
-                  thickness: 2,
-                ),
-                SizedBox(height: 37.5),
-                Text("Toppings",  style: TextStyle(
-                  shadows: [
-                    Shadow(
-                        color: Colors.black,
-                        offset: Offset(0, -5)
-                    )
-                  ],
+              ]),
+            ]),
+            SizedBox(height: 23.5),
+            Divider(
+              color: Color(0xFF707070),
+              height: 0,
+              indent: 0,
+              endIndent: 0,
+              thickness: 2,
+            ),
+            SizedBox(height: 37.5),
+            Text("Toppings",
+                style: TextStyle(
+                  shadows: [Shadow(color: Colors.black, offset: Offset(0, -5))],
                   color: Colors.transparent,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
                   decorationColor: Color(0xFFEB9A00),
                   decorationThickness: 3,
-                )
-                ),
-                SizedBox(height: 72),
-                Expanded(
-                  child: new CustomRadioToppings(),
-                )
-              ]
-          ),
+                )),
+            SizedBox(height: 72),
+            Expanded(
+              child: new CustomRadioToppings(),
+            )
+          ]),
         ),
       ),
-    ) ;
+    );
   }
 }
 
@@ -131,12 +126,14 @@ class CustomRadioToppingsState extends State<CustomRadioToppings> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    HomeScreen().getAPIChoices("toppings").then((results) => {
+          results.forEach((result) {
+            sampleData.add(new RadioModel(
+                false, result['name'], result['price'].toString()));
+          }),
+          setState(() {})
+        });
     super.initState();
-    sampleData.add(new RadioModel(false, 'Pineapple', '5'));
-    sampleData.add(new RadioModel(false, 'Tamago', '5'));
-    sampleData.add(new RadioModel(false, 'Corn', '5'));
-    sampleData.add(new RadioModel(false, 'Sesame Seed', '5'));
   }
 
   @override
@@ -177,27 +174,23 @@ class RadioItem extends StatelessWidget {
           new Container(
             height: 218.0,
             width: 225.0,
-            child: new Center(
-
-            ),
+            child: new Center(),
             decoration: new BoxDecoration(
               border: new Border.all(
-                  width: _item.isSelected
-                      ? 3.0
-                      : 1.0,
-                  color: _item.isSelected
-                      ? Colors.white
-                      : Colors.black),
+                  width: _item.isSelected ? 3.0 : 1.0,
+                  color: _item.isSelected ? Colors.white : Colors.black),
               borderRadius: const BorderRadius.all(const Radius.circular(10.0)),
             ),
           ),
           new SizedBox(height: 13),
           new Container(
-            child: new Text(_item.text , style: TextStyle(fontSize: 25, color: Colors.white)),
+            child: new Text(_item.text,
+                style: TextStyle(fontSize: 25, color: Colors.white)),
           ),
           new SizedBox(height: 13),
           new Container(
-            child: new Text("€" + _item.price , style: TextStyle(fontSize: 25, color: Colors.white)),
+            child: new Text("€" + _item.price,
+                style: TextStyle(fontSize: 25, color: Colors.white)),
           ),
         ],
       ),

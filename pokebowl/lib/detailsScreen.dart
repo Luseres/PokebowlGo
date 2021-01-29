@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
-class Gegevens extends StatefulWidget {
+
+class Details extends StatelessWidget {
+
   @override
   
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: new GegevensScreen()
+        home: new DetailsScreen()
     );
   }
   
 }
 
-class GegevensScreen extends StatefulWidget {
+class DetailsScreen extends StatefulWidget {
   String valueChoose;
   List listItem = [
     "1", "2"
   ];
   bool checkBoxValue = false;
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

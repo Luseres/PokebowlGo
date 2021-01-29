@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pokebowl/toppingsChoice.dart';
+import 'package:pokebowl/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Cart extends StatelessWidget {
+class History extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: new CartScreen()
+        home: new HistoryScreen()
     );
   }
 }
 
-class CartScreen extends StatelessWidget {
+class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -22,7 +22,7 @@ class CartScreen extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ToppingsChoice()),
+            MaterialPageRoute(builder: (context) => HomeScreen()),
           );
         },
         child: FaIcon(
@@ -32,8 +32,7 @@ class CartScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body:Center(child: Text('CartScreen')),
-
+      body:Center(child: Text('History Screen')),
     );
   }
 }

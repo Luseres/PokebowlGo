@@ -95,7 +95,7 @@ class CartScreen extends StatelessWidget {
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12))),
-                child: Text("Pay  ➜",
+                child: Text("Details  ➜",
                     style: TextStyle(
                         color: Color(0xFFEB9A00),
                         fontSize: 30,

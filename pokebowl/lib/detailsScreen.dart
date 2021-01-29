@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pokebowl/main.dart';
-
+import 'package:pokebowl/completeScreen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pokebowl/cartScreen.dart';
 
 class Details extends StatelessWidget {
   @override
@@ -35,17 +36,46 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: Padding (
-        padding: const EdgeInsets.fromLTRB(20.0, 50, 20, 0),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      floatingActionButton: FloatingActionButton(
+        elevation: 0,
+        heroTag: "btnHome",
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CartScreen()),
+          );
+        },
+        child: FaIcon(
+          FontAwesomeIcons.arrowLeft,
+          color: Colors.black,
+          size: 30,
+        ),
+        backgroundColor: Colors.transparent,
+      ),
+      body: SingleChildScrollView(
+        child: Padding (
+        padding: const EdgeInsets.fromLTRB(20.0, 0, 20, 0),
         child: Column(
           children: [
+            SizedBox(height: 48),
+            Text("Details",
+                style: TextStyle(
+                  shadows: [Shadow(color: Colors.black, offset: Offset(0, -5))],
+                  color: Colors.transparent,
+                  fontSize: 30,
+                  decoration: TextDecoration.underline,
+                  decorationColor: Color(0xFFEB9A00),
+                  decorationThickness: 3,
+                )),
+            SizedBox(height: 28.5),
             Row(
               children: [
                 Flexible(
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw naam",
-                        labelText: "Naam",
+                        hintText: "Your Name",
+                        labelText: "Name",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -66,8 +96,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 Flexible(
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw Achternaam",
-                        labelText: "Achternaam",
+                        hintText: "Your Last Name",
+                        labelText: "Last Name",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -91,8 +121,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 Flexible(
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw Stad ",
-                        labelText: "Stad",
+                        hintText: "Your City",
+                        labelText: "City",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -112,8 +142,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 Flexible(
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw Postcode",
-                        labelText: "Postcode",
+                        hintText: "Your Zip Code",
+                        labelText: "Zip Code",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -137,8 +167,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 Flexible(
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw Straat",
-                        labelText: "Straat",
+                        hintText: "Your Street",
+                        labelText: "Street",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -158,8 +188,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 Flexible(
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw Huisnummer",
-                        labelText: "Huisnummer",
+                        hintText: "Your House Number",
+                        labelText: "House Number",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -182,8 +212,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),SizedBox(height: 20,),
             TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw Telefoonnummer",
-                        labelText: "Telefoonnummer",
+                        hintText: "Your Phone Number",
+                        labelText: "Phone Number",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -204,7 +234,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),SizedBox(height: 10,),
                   TextField(
                     decoration: InputDecoration(
-                        hintText: "Uw E-mail",
+                        hintText: "Your E-mail",
                         labelText: "E-mail",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
@@ -232,19 +262,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
                            print(value);
                          }),
                           Text(
-                    'Onthoud mijn gegevens', 
+                    'Remember My Details',
                     style: TextStyle(
                       fontSize: 12,
-                      
                       color: Colors.black
                   ))
                     ]
                   ),
                   TextField(
                     decoration: InputDecoration(
-                      
-                        hintText: "Uw Opmerking",
-                        labelText: "Opmerking",
+                        hintText: "Your Commentary",
+                        labelText: "Commentary",
                         hintStyle: TextStyle(fontSize: 12),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.orange)
@@ -255,7 +283,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ),
                     isDense: true,
                         contentPadding: EdgeInsets.all(10),
-                        
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
                     ),
@@ -270,7 +297,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         borderRadius: BorderRadius.circular(5)
                       ),
                       child: DropdownButton(
-                        hint: Text("IDEAL bank kiezen"),
+                        hint: Text("IDEAL"),
                         isExpanded: true,
                         value: valueChoose,
                         onChanged: (newValue) {
@@ -297,7 +324,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         borderRadius: BorderRadius.circular(5)
                       ),
                       child: DropdownButton(
-                        hint: Text("Bezorgtijd kiezen"),
+                        hint: Text("Delivery Time"),
                         isExpanded: true,
                         value: valuekeys,
                         onChanged: (newValue) {
@@ -322,17 +349,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   child: RaisedButton(onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      MaterialPageRoute(builder: (context) => Complete()),
                     );
                     },
                     color: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: Text("Afrekenen", style: TextStyle(color: Color(0xFFEB9A00), fontSize: 20, fontWeight: FontWeight.bold)),
+                    child: Text("Pay", style: TextStyle(color: Color(0xFFEB9A00), fontSize: 20, fontWeight: FontWeight.bold)),
                   ),
-                )
-                
+                ),
+            SizedBox(height: 20),
           ],
         ),
+      ),
       ),
     );
   }

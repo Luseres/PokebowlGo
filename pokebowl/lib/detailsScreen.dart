@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Gegevens extends StatelessWidget {
+class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: new GegevensScreen()
+        home: new DetailsScreen()
     );
   }
 }
 
-class GegevensScreen extends StatelessWidget {
+class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

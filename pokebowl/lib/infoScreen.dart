@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pokebowl/main.dart';
 import 'package:pokebowl/baseChoice.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'halfCircleHigh.dart';
+import 'package:pokebowl/halfCircleHigh.dart';
 
 class Info extends StatelessWidget {
   // This widget is the root of your application.

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokebowl/main.dart';
 
 
 class Details extends StatelessWidget {
@@ -21,8 +22,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   String valueChoose;
   List listItem = [
-    "1", "2"
+    "ING", "ABN Ambro", "ASN Bank", "Rabobank", "Bunq" , "SNS Bank"
   ];
+
+  String valuekeys;
+  List listkeys = [
+    "15:30", "16:00", "16:30", "17:00", "17:30" , "18:30"
+  ];
+  
   bool checkBoxValue = false;
 
   @override
@@ -44,9 +51,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             borderSide: BorderSide(color: Colors.orange)
                         ),
                         labelStyle: TextStyle(
+                            
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -66,6 +76,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -89,6 +101,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -108,6 +122,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -131,6 +147,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -152,6 +170,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             color: Colors.orange,
                             
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -172,6 +192,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
@@ -192,6 +214,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(10),
                     
                         border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                         focusedBorder: OutlineInputBorder(
@@ -218,6 +242,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                   TextField(
                     decoration: InputDecoration(
+                      
                         hintText: "Uw Opmerking",
                         labelText: "Opmerking",
                         hintStyle: TextStyle(fontSize: 12),
@@ -228,28 +253,83 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             fontSize: 15,
                             color: Colors.orange
                         ),
-                    
-                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                    isDense: true,
+                        contentPadding: EdgeInsets.all(10),
+                        
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.green) )
                     ),
                     maxLines: 3,
                   ),
-                  DropdownButton(
-                    value: valueChoose,
-                    onChanged: (newValue) {
-                      setState(() {
-                        valueChoose = newValue;
-                      });
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      padding: EdgeInsets.only(left:10, right:10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.orange),
+                        borderRadius: BorderRadius.circular(5)
+                      ),
+                      child: DropdownButton(
+                        hint: Text("IDEAL bank kiezen"),
+                        isExpanded: true,
+                        value: valueChoose,
+                        onChanged: (newValue) {
+                          setState(() {
+                            valueChoose = newValue;
+                          });
+                        },
+                        items: listItem.map((valueItem){
+                          return DropdownMenuItem(
+                            value: valueItem,
+                            child: Text(valueItem),
+                            
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      padding: EdgeInsets.only(left:10, right:10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.orange),
+                        borderRadius: BorderRadius.circular(5)
+                      ),
+                      child: DropdownButton(
+                        hint: Text("Bezorgtijd kiezen"),
+                        isExpanded: true,
+                        value: valuekeys,
+                        onChanged: (newValue) {
+                          setState(() {
+                            valuekeys = newValue;
+                          });
+                        },
+                        items: listkeys.map((valueItem){
+                          return DropdownMenuItem(
+                            value: valueItem,
+                            child: Text(valueItem),
+                            
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  SizedBox(
+                  width: 212,
+                  height: 50,
+                  child: RaisedButton(onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
                     },
-                    items: listItem.map((valueItem){
-                      return DropdownButton(
-                        value: valueItem,
-                        child: Text(valueItem),
-                        
-                      );
-                    }).toList(),
-                  )
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: Text("Afrekenen", style: TextStyle(color: Color(0xFFEB9A00), fontSize: 20, fontWeight: FontWeight.bold)),
+                  ),
+                )
                 
           ],
         ),

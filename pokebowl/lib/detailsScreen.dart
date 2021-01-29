@@ -2,18 +2,23 @@ import 'package:flutter/material.dart';
 
 
 class Details extends StatelessWidget {
-
   @override
-  
   Widget build(BuildContext context) {
     return MaterialApp(
         home: new DetailsScreen()
     );
   }
-  
 }
 
 class DetailsScreen extends StatefulWidget {
+  DetailsScreen({Key key}) : super(key: key);
+
+  @override
+  _DetailsScreenState createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+
   String valueChoose;
   List listItem = [
     "1", "2"

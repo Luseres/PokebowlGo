@@ -32,7 +32,38 @@ class HistoryScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body:Center(child: Text('History Screen')),
+      body:Center(
+        child: Column(
+          children: [
+            SizedBox(height: 38),
+            Text("Most Recent Orders",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            SizedBox(height: 32),
+            Container(
+              height: 101,
+              color: Color(0xFFF0F0F0),
+              child: Column(
+                children: [
+                  SizedBox(height: 22),
+                  Row(
+                    children: [
+                      Text("#13212:"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+                height: 101,
+
+            ),
+            Container(
+              height: 101,
+              color: Color(0xFFF0F0F0),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

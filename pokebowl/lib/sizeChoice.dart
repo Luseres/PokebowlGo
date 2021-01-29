@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pokebowl/baseChoice.dart';
 import 'package:pokebowl/main.dart';
-import 'package:pokebowl/sidesChoice.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pokebowl/halfCircle.dart';
-import 'package:pokebowl/sizeChoice.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class BaseChoice extends StatelessWidget {
+class SizeChoice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: new BaseScreen());
+    return MaterialApp(home: new SizesScreen());
   }
 }
 
-class BaseScreen extends StatelessWidget {
+class SizesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -24,11 +23,11 @@ class BaseScreen extends StatelessWidget {
           children: <Widget>[
             FloatingActionButton(
               elevation: 0,
-              heroTag: "btn2",
+              heroTag: "btn8",
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SizesScreen()),
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
               },
               backgroundColor: Colors.transparent,
@@ -39,11 +38,11 @@ class BaseScreen extends StatelessWidget {
               ),
             ),
             FloatingActionButton(
-              heroTag: "btn3",
+              heroTag: "btn9",
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SidesChoice()),
+                  MaterialPageRoute(builder: (context) => BaseChoice()),
                 );
               },
               backgroundColor: Colors.white,
@@ -93,7 +92,7 @@ class BaseScreen extends StatelessWidget {
               thickness: 2,
             ),
             SizedBox(height: 37.5),
-            Text("Base",
+            Text("Size",
                 style: TextStyle(
                   shadows: [Shadow(color: Colors.black, offset: Offset(0, -5))],
                   color: Colors.transparent,
@@ -105,7 +104,7 @@ class BaseScreen extends StatelessWidget {
                 )),
             SizedBox(height: 72),
             Expanded(
-              child: new CustomRadioBase(),
+              child: new CustomRadioMix(),
             )
           ]),
         ),
@@ -114,19 +113,19 @@ class BaseScreen extends StatelessWidget {
   }
 }
 
-class CustomRadioBase extends StatefulWidget {
+class CustomRadioMix extends StatefulWidget {
   @override
   createState() {
-    return new CustomRadioBaseState();
+    return new CustomRadioMixState();
   }
 }
 
-class CustomRadioBaseState extends State<CustomRadioBase> {
+class CustomRadioMixState extends State<CustomRadioMix> {
   List<RadioModel> sampleData = new List<RadioModel>();
 
   @override
   void initState() {
-    HomeScreen().getAPIChoices("bases").then((results) => {
+    HomeScreen().getAPIChoices("sizes").then((results) => {
           results.forEach((result) {
             sampleData.add(new RadioModel(false, result['name'],
                 result['price'].toString(), result['image']));

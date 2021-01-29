@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:pokebowl/infoScreen.dart';
-import 'package:pokebowl/baseChoice.dart';
 import 'package:pokebowl/historyScreen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pokebowl/halfCircle.dart';
 import 'package:http/http.dart' as http;
+import 'package:pokebowl/sizeChoice.dart';
 
 void main() {
   runApp(MyApp());
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => BaseChoice()),
+                      MaterialPageRoute(builder: (context) => SizeChoice()),
                     );
                   },
                   color: Colors.white,
